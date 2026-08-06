@@ -1,0 +1,49 @@
+{
+  "_comment": [
+    "COMMITTED G2 dynamic baselines (ticket sim-agent-G2-v2). Measured on this",
+    "module's dev machine over the recorded real set (synthetic_openclose) + the",
+    "tuned grasp scenarios. Timing is MACHINE-SPECIFIC: re-measure on the target box",
+    "and bump deliberately. Env overrides: LOOP_REGRESSION_MARGIN."
+  ],
+  "loop_rate": {
+    "_role": "Two-part gate. (a) absolute: p99 compute < period_us. (b) regression: p99 compute < baseline*(1+margin).",
+    "period_us": 33333.0,
+    "p99_compute_baseline_us": 11000.0,
+    "regression_margin": 0.50,
+    "_MARGIN_SIGNOFF": "PROPOSED regression_margin 0.50 (matches the safety filter's margin; the filter dominates loop compute). Absolute period_us is the hard real-time guarantee independent of this margin.",
+    "observed_p99_compute_us": 10911.0,
+    "observed_p50_compute_us": 3800.0,
+    "observed_breakdown_p50_us": {"retarget": 733, "filter": 2282, "sim_step": 819}
+  },
+  "mimic": {
+    "_role": "Coupling ratios hold under dynamics.",
+    "ratio_nonthumb": 0.8917,
+    "ratio_thumb": 1.1619,
+    "abs_err_tol_rad": 0.05,
+    "ratio_rel_tol": 0.10,
+    "observed_max_abs_err_rad": 0.019
+  },
+  "grasp": {
+    "_role": "Stable contact, not ejected/exploded, force <= virtual cap.",
+    "force_cap_N": 15.0,
+    "max_displacement_m": 0.12,
+    "max_end_speed_m_s": 0.10,
+    "min_contact_links": 2,
+    "observed": {
+      "cylinder_power": {"disp": 0.068, "end_speed": 0.003, "links": 10, "steady_N": 10.18, "peak_N": 12.52},
+      "sphere_envelop": {"disp": 0.027, "end_speed": 0.000, "links": 8, "steady_N": 8.51, "peak_N": 9.12}
+    }
+  },
+  "latency": {
+    "_role": "Loop stable + bounded tracking error at low/target/high latency; no divergence.",
+    "frames_low_target_high": [0, 2, 6],
+    "ms_low_target_high": [0.0, 66.7, 200.0],
+    "max_seg_err_ceiling_rad": 2.0,
+    "observed_p95_seg_err_rad": {"0ms": 0.365, "67ms": 0.519, "200ms": 1.329}
+  },
+  "tracking_penalty": {
+    "_role": "MONITORED: dynamics+latency per-segment error vs G1 kinematic (G1 overall p95 ~0.178).",
+    "g1_kinematic_overall_p95_rad": 0.178,
+    "observed_dynamic_nolatency_max_seg_err_p95_rad": 0.365
+  }
+}

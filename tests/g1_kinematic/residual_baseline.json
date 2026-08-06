@@ -1,0 +1,39 @@
+{
+  "_comment": [
+    "COMMITTED G1 residual baseline (ticket sim-agent-G2-v2 Step 0).",
+    "Measured on the recorded real set (perception synthetic_openclose_{left,right},",
+    "174 detected frames, 870 prox + 870 dist samples) after the kinematics-agent",
+    "Finding-1 refactor (r_dist fingertip-inclusive). Geodesic orientation error, rad.",
+    "PROXIMAL is a HARD GATE; DISTAL is MONITORED with a regression guard.",
+    "Env overrides: PROXIMAL_TOL, REGRESSION_MARGIN, G1_DISTAL_RESIDUAL_THRESHOLD."
+  ],
+  "n_frames": 174,
+  "proximal": {
+    "_role": "HARD GATE: pooled p95 must be <= tol_rad.",
+    "tol_rad": 0.15,
+    "_HUMAN_SIGNOFF": "PROPOSED 0.15 rad (~8.6 deg) AWAITS SIGN-OFF. NOTE: proximal is NOT near-zero at the tail as the p50=0.000 framing implies; pooled p95=0.1236, max=0.219. The tail is pose-correlated (mid-curl transition frames) and consistent with 2-DoF base under-actuation on transient curled SYNTHETIC poses, not a solver regression. 0.15 gives ~21% headroom over observed p95, sits below distal p95 (0.20), and trips on any real base-solve break. Decision is solver-tuning vs threshold (same axis as distal).",
+    "observed_pooled_p50": 0.0000,
+    "observed_pooled_p90": 0.0807,
+    "observed_pooled_p95": 0.1236,
+    "observed_pooled_p99": 0.1669,
+    "observed_pooled_max": 0.2190,
+    "observed_per_finger_p95": {
+      "thumb": 0.1225, "index": 0.1030, "middle": 0.0951,
+      "ring": 0.1296, "little": 0.1339
+    }
+  },
+  "distal": {
+    "_role": "MONITORED: report distribution, pass by default, hard-fail on regression beyond regression_margin above the committed baselines below. When G1_DISTAL_RESIDUAL_THRESHOLD is set (real-camera data) it also becomes an absolute gate on the distal pooled p95.",
+    "regression_margin": 0.20,
+    "_MARGIN_SIGNOFF": "PROPOSED regression_margin 0.20 (20%) AWAITS SIGN-OFF: absorbs synthetic re-measure jitter yet trips on a real solver regression (which would push residual >>20%).",
+    "overall_p95_baseline": 0.178,
+    "thumb_dist_p95_baseline": 0.143,
+    "observed_pooled_p50": 0.0599,
+    "observed_pooled_p95": 0.2001,
+    "observed_pooled_max": 0.4376,
+    "observed_per_finger_p95": {
+      "thumb": 0.1429, "index": 0.2397, "middle": 0.1735,
+      "ring": 0.1805, "little": 0.2230
+    }
+  }
+}
