@@ -1,0 +1,9 @@
+# Runtime deps for the live RealSense mirror (Stage 1). NOT needed for CI/tests,
+# which use the camera-free replay + the pure deproject helpers. PyBullet comes
+# from src/sim/requirements.txt.
+#
+#   pip install -r src/viz/requirements.txt
+#
+pyrealsense2     # Intel RealSense SDK (aligned RGB-D, intrinsics, deprojection)
+mediapipe        # MediaPipe Hands — 21 2D landmarks from the colour image
+opencv-python     # colour conversion + optional camera/overlay window

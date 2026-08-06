@@ -1,0 +1,5 @@
+# src/sim — G1 kinematic harness runtime deps (install into the repo .venv)
+pybullet>=3.2.7      # kinematic FK (resetJointState / getLinkState); no dynamics used
+numpy>=1.24
+pillow>=9.0         # viz.py — per-frame PNG/GIF overlays (no matplotlib dependency)
+# yourdfpy is NOT required at runtime; it is used only to cross-check FK in tests.

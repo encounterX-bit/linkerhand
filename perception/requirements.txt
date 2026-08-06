@@ -1,0 +1,5 @@
+# Real-backend deps only (MediaPipeHandSource). NOT needed for CI / perception
+# tests, which run on SyntheticHandSource + ReplayHandSource. numpy comes from
+# the repo env (eval/requirements.txt).
+mediapipe==0.10.21
+opencv-python==4.11.0.86

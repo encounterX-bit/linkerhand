@@ -1,0 +1,6 @@
+# Runtime deps for ROS2 hardware teleop inside this repo's .venv.
+# Source ROS first so rclpy/sensor_msgs come from /opt/ros:
+#   source /opt/ros/jazzy/setup.bash
+#   pip install -r src/comms/requirements.txt
+PyYAML
+

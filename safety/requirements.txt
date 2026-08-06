@@ -1,0 +1,9 @@
+# src/safety runtime deps. FK + conventions come from src/kinematics (yourdfpy,
+# numpy). No sim, no PyBullet, no hardware path here.
+numpy
+# (src.kinematics pulls in yourdfpy; the filter never loads meshes at runtime.)
+
+# --- dev / offline only (NOT imported by the filter) ---
+# Used solely by _gen_collision_model.py to re-bake CAPSULE_RADII / palm slab
+# from the URDF collision meshes:
+trimesh
