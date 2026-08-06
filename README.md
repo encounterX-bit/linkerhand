@@ -20,7 +20,6 @@ MediaPipe / RealSense / recorded video
 
 ## Repository Layout
 
-The 100 files introduced by commit `30216d1` are located under `src/`. Files from earlier commits remain in their original top-level locations. This root README is the project entry point.
 
 | Path | Purpose |
 | --- | --- |
