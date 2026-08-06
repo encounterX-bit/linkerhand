@@ -1,0 +1,98 @@
+digraph L20ResidualACT {
+  graph [
+    rankdir=TB,
+    bgcolor="white",
+    pad="0.25",
+    nodesep="0.35",
+    ranksep="0.55",
+    splines=polyline,
+    newrank=true
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    color="#273043",
+    fillcolor="#F7F7F2",
+    fontname="DejaVu Sans",
+    fontsize=12,
+    margin="0.12,0.08"
+  ];
+
+  edge [
+    color="#273043",
+    fontname="DejaVu Sans",
+    fontsize=10,
+    arrowsize=0.8
+  ];
+
+  subgraph cluster_teacher {
+    label="Offline teacher training in Isaac Gym";
+    color="#8C9A9E";
+    fontname="DejaVu Sans";
+    fontsize=13;
+    style="rounded";
+
+    env [label="L20 post-reach\npower-grasp environment"];
+    randomization [label="Power objects only\nsphere/box/cylinder/mug-body\n+ contact/motor/delay"];
+    teacher [label="RL teacher pi_RL\nprivileged sim state -> a_RL"];
+    randomization -> env;
+    env -> teacher;
+  }
+
+  subgraph cluster_collection {
+    label="Human-in-sim dataset collection";
+    color="#8C9A9E";
+    fontname="DejaVu Sans";
+    fontsize=13;
+    style="rounded";
+
+    mediapipe [label="MediaPipe landmark\nwindow"];
+    encoder [label="Intention encoder\nz_intent"];
+    retarget [label="Power-grasp retargeter\na_coarse"];
+    simrollout [label="Teleop rollout\ninside same sim task"];
+    query [label="Query frozen pi_RL\nfor each state"];
+    delta [label="delta_a = a_RL - a_coarse"];
+
+    mediapipe -> encoder;
+    mediapipe -> retarget;
+    retarget -> simrollout;
+    simrollout -> query;
+    teacher -> query;
+    query -> delta;
+  }
+
+  subgraph cluster_student {
+    label="Residual ACT student";
+    color="#8C9A9E";
+    fontname="DejaVu Sans";
+    fontsize=13;
+    style="rounded";
+
+    dataset [label="Dataset\nstudent obs + delta_a chunks"];
+    act [label="ACT residual policy\nstudent obs -> delta_a chunk"];
+    bounds [label="Per-joint clip\nlambda schedule"];
+    final [label="Runtime fusion\nsafety_filter(a_coarse + lambda * delta_a)"];
+
+    delta -> dataset;
+    encoder -> dataset;
+    simrollout -> dataset;
+    dataset -> act;
+    act -> bounds;
+    bounds -> final;
+  }
+
+  subgraph cluster_real {
+    label="Real deployment, G3 human-gated";
+    color="#8C9A9E";
+    fontname="DejaVu Sans";
+    fontsize=13;
+    style="rounded";
+
+    safety [label="HW_ENABLE_TOKEN\ncurrent/speed/watchdog"];
+    hand [label="Linker Hand L20\njoint targets"];
+
+    final -> safety;
+    safety -> hand;
+  }
+}

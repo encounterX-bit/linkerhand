@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "humanego_two_finger_action",
+  "description": "Compact HumanEgo-style policy action for LinkerHand thumb+index MVP.",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": ["action"],
+      "properties": {
+        "t": { "type": "number" },
+        "mode": { "enum": ["pinch3", "joint7"] },
+        "action": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 7,
+          "items": { "type": "number" }
+        }
+      },
+      "additionalProperties": true
+    },
+    {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 7,
+      "items": { "type": "number" }
+    }
+  ]
+}

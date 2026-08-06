@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "hand_landmarks",
+  "type": "object",
+  "required": ["side", "landmarks", "frame", "t"],
+  "properties": {
+    "side":  { "enum": ["left", "right"] },
+    "frame": { "const": "hand_base" },
+    "t":     { "type": "number" },
+    "landmarks": {
+      "type": "array", "minItems": 21, "maxItems": 21,
+      "items": { "type": "array", "minItems": 3, "maxItems": 3,
+                 "items": { "type": "number" } },
+      "description": "MediaPipe Hands 21-landmark convention, 3D, hand_base frame"
+    }
+  }
+}

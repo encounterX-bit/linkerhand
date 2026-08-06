@@ -1,0 +1,7 @@
+lxml==6.1.1
+networkx==3.6.1
+numpy==2.4.6
+pytest==9.0.3
+scipy==1.17.1
+trimesh==4.12.2
+yourdfpy==0.0.60

@@ -1,0 +1,576 @@
+{
+  "tol_deg": 5.0,
+  "sides": {
+    "right": {
+      "fingers": {
+        "thumb": {
+          "is_thumb": true,
+          "chain": [
+            "thumb_cmc_yaw",
+            "thumb_cmc_roll",
+            "thumb_cmc_pitch",
+            "thumb_mcp"
+          ],
+          "axes_world": {
+            "thumb_cmc_yaw": [
+              0.999999999966269,
+              3.6732051032474533e-06,
+              -7.346410206643588e-06
+            ],
+            "thumb_cmc_roll": [
+              -5.409675864308067e-06,
+              -0.37847945652862175,
+              -0.9256096914772093
+            ],
+            "thumb_cmc_pitch": [
+              0.999999999966266,
+              3.6729985408580605e-06,
+              -7.346915049591832e-06
+            ],
+            "thumb_mcp": [
+              0.999999999966266,
+              3.6729985408580605e-06,
+              -7.346915049591832e-06
+            ]
+          },
+          "consecutive_pairs": [
+            {
+              "from": "thumb_cmc_yaw",
+              "to": "thumb_cmc_roll",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            },
+            {
+              "from": "thumb_cmc_roll",
+              "to": "thumb_cmc_pitch",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            },
+            {
+              "from": "thumb_cmc_pitch",
+              "to": "thumb_mcp",
+              "angle_deg": 0.0,
+              "acute_angle_deg": 0.0,
+              "class": "parallel"
+            }
+          ],
+          "n_actuated_dof": 4,
+          "n_base_dof": 3,
+          "tip_is_coupled": true,
+          "tip_coupling": {
+            "mimic_joint": "thumb_dip",
+            "ratio": 1.1619
+          },
+          "target_dim": 4
+        },
+        "index": {
+          "is_thumb": false,
+          "chain": [
+            "index_mcp_pitch",
+            "index_mcp_roll",
+            "index_pip"
+          ],
+          "axes_world": {
+            "index_mcp_pitch": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "index_mcp_roll": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "index_pip": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "consecutive_pairs": [
+            {
+              "from": "index_mcp_pitch",
+              "to": "index_mcp_roll",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            },
+            {
+              "from": "index_mcp_roll",
+              "to": "index_pip",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            }
+          ],
+          "n_actuated_dof": 3,
+          "n_base_dof": 2,
+          "tip_is_coupled": true,
+          "tip_coupling": {
+            "mimic_joint": "index_dip",
+            "ratio": 0.8917
+          },
+          "target_dim": 4
+        },
+        "middle": {
+          "is_thumb": false,
+          "chain": [
+            "middle_mcp_pitch",
+            "middle_mcp_roll",
+            "middle_pip"
+          ],
+          "axes_world": {
+            "middle_mcp_pitch": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "middle_mcp_roll": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "middle_pip": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "consecutive_pairs": [
+            {
+              "from": "middle_mcp_pitch",
+              "to": "middle_mcp_roll",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            },
+            {
+              "from": "middle_mcp_roll",
+              "to": "middle_pip",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            }
+          ],
+          "n_actuated_dof": 3,
+          "n_base_dof": 2,
+          "tip_is_coupled": true,
+          "tip_coupling": {
+            "mimic_joint": "middle_dip",
+            "ratio": 0.8917
+          },
+          "target_dim": 4
+        },
+        "ring": {
+          "is_thumb": false,
+          "chain": [
+            "ring_mcp_pitch",
+            "ring_mcp_roll",
+            "ring_pip"
+          ],
+          "axes_world": {
+            "ring_mcp_pitch": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ring_mcp_roll": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "ring_pip": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "consecutive_pairs": [
+            {
+              "from": "ring_mcp_pitch",
+              "to": "ring_mcp_roll",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            },
+            {
+              "from": "ring_mcp_roll",
+              "to": "ring_pip",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            }
+          ],
+          "n_actuated_dof": 3,
+          "n_base_dof": 2,
+          "tip_is_coupled": true,
+          "tip_coupling": {
+            "mimic_joint": "ring_dip",
+            "ratio": 0.8917
+          },
+          "target_dim": 4
+        },
+        "little": {
+          "is_thumb": false,
+          "chain": [
+            "pinky_mcp_pitch",
+            "pinky_mcp_roll",
+            "pinky_pip"
+          ],
+          "axes_world": {
+            "pinky_mcp_pitch": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "pinky_mcp_roll": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "pinky_pip": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "consecutive_pairs": [
+            {
+              "from": "pinky_mcp_pitch",
+              "to": "pinky_mcp_roll",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            },
+            {
+              "from": "pinky_mcp_roll",
+              "to": "pinky_pip",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            }
+          ],
+          "n_actuated_dof": 3,
+          "n_base_dof": 2,
+          "tip_is_coupled": true,
+          "tip_coupling": {
+            "mimic_joint": "pinky_dip",
+            "ratio": 0.8917
+          },
+          "target_dim": 4
+        }
+      }
+    },
+    "left": {
+      "fingers": {
+        "thumb": {
+          "is_thumb": true,
+          "chain": [
+            "thumb_cmc_yaw",
+            "thumb_cmc_roll",
+            "thumb_cmc_pitch",
+            "thumb_mcp"
+          ],
+          "axes_world": {
+            "thumb_cmc_yaw": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "thumb_cmc_roll": [
+              0.0,
+              -0.4792532363941376,
+              0.8776766690562904
+            ],
+            "thumb_cmc_pitch": [
+              -0.9999999999932538,
+              1.7603954337183083e-06,
+              -3.223886419865788e-06
+            ],
+            "thumb_mcp": [
+              -0.9999999999932538,
+              1.7603954337183083e-06,
+              -3.223886419865788e-06
+            ]
+          },
+          "consecutive_pairs": [
+            {
+              "from": "thumb_cmc_yaw",
+              "to": "thumb_cmc_roll",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            },
+            {
+              "from": "thumb_cmc_roll",
+              "to": "thumb_cmc_pitch",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            },
+            {
+              "from": "thumb_cmc_pitch",
+              "to": "thumb_mcp",
+              "angle_deg": 0.0,
+              "acute_angle_deg": 0.0,
+              "class": "parallel"
+            }
+          ],
+          "n_actuated_dof": 4,
+          "n_base_dof": 3,
+          "tip_is_coupled": true,
+          "tip_coupling": {
+            "mimic_joint": "thumb_dip",
+            "ratio": 1.1619
+          },
+          "target_dim": 4
+        },
+        "index": {
+          "is_thumb": false,
+          "chain": [
+            "index_mcp_pitch",
+            "index_mcp_roll",
+            "index_pip"
+          ],
+          "axes_world": {
+            "index_mcp_pitch": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "index_mcp_roll": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "index_pip": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "consecutive_pairs": [
+            {
+              "from": "index_mcp_pitch",
+              "to": "index_mcp_roll",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            },
+            {
+              "from": "index_mcp_roll",
+              "to": "index_pip",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            }
+          ],
+          "n_actuated_dof": 3,
+          "n_base_dof": 2,
+          "tip_is_coupled": true,
+          "tip_coupling": {
+            "mimic_joint": "index_dip",
+            "ratio": 0.8917
+          },
+          "target_dim": 4
+        },
+        "middle": {
+          "is_thumb": false,
+          "chain": [
+            "middle_mcp_pitch",
+            "middle_mcp_roll",
+            "middle_pip"
+          ],
+          "axes_world": {
+            "middle_mcp_pitch": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "middle_mcp_roll": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "middle_pip": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "consecutive_pairs": [
+            {
+              "from": "middle_mcp_pitch",
+              "to": "middle_mcp_roll",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            },
+            {
+              "from": "middle_mcp_roll",
+              "to": "middle_pip",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            }
+          ],
+          "n_actuated_dof": 3,
+          "n_base_dof": 2,
+          "tip_is_coupled": true,
+          "tip_coupling": {
+            "mimic_joint": "middle_dip",
+            "ratio": 0.8917
+          },
+          "target_dim": 4
+        },
+        "ring": {
+          "is_thumb": false,
+          "chain": [
+            "ring_mcp_pitch",
+            "ring_mcp_roll",
+            "ring_pip"
+          ],
+          "axes_world": {
+            "ring_mcp_pitch": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ring_mcp_roll": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "ring_pip": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "consecutive_pairs": [
+            {
+              "from": "ring_mcp_pitch",
+              "to": "ring_mcp_roll",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            },
+            {
+              "from": "ring_mcp_roll",
+              "to": "ring_pip",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            }
+          ],
+          "n_actuated_dof": 3,
+          "n_base_dof": 2,
+          "tip_is_coupled": true,
+          "tip_coupling": {
+            "mimic_joint": "ring_dip",
+            "ratio": 0.8917
+          },
+          "target_dim": 4
+        },
+        "little": {
+          "is_thumb": false,
+          "chain": [
+            "pinky_mcp_pitch",
+            "pinky_mcp_roll",
+            "pinky_pip"
+          ],
+          "axes_world": {
+            "pinky_mcp_pitch": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "pinky_mcp_roll": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "pinky_pip": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "consecutive_pairs": [
+            {
+              "from": "pinky_mcp_pitch",
+              "to": "pinky_mcp_roll",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            },
+            {
+              "from": "pinky_mcp_roll",
+              "to": "pinky_pip",
+              "angle_deg": 90.0,
+              "acute_angle_deg": 90.0,
+              "class": "perpendicular"
+            }
+          ],
+          "n_actuated_dof": 3,
+          "n_base_dof": 2,
+          "tip_is_coupled": true,
+          "tip_coupling": {
+            "mimic_joint": "pinky_dip",
+            "ratio": 0.8917
+          },
+          "target_dim": 4
+        }
+      }
+    }
+  },
+  "variant": {
+    "model": "L20",
+    "urdf_right": "src/sim/urdf/l20/right/linkerhand_l20_right.urdf",
+    "n_revolute_joints": 21,
+    "n_mimic_joints": 5,
+    "n_independent_joints": 16,
+    "n_active_dof": 16,
+    "n_reserved_dof": 4,
+    "n_fingers": 5
+  },
+  "mimic_map": {
+    "pinky_dip": {
+      "driver": "pinky_pip",
+      "ratio": 0.8917,
+      "offset": 0.0
+    },
+    "ring_dip": {
+      "driver": "ring_pip",
+      "ratio": 0.8917,
+      "offset": 0.0
+    },
+    "middle_dip": {
+      "driver": "middle_pip",
+      "ratio": 0.8917,
+      "offset": 0.0
+    },
+    "index_dip": {
+      "driver": "index_pip",
+      "ratio": 0.8917,
+      "offset": 0.0
+    },
+    "thumb_dip": {
+      "driver": "thumb_mcp",
+      "ratio": 1.1619,
+      "offset": 0.0
+    }
+  },
+  "timing_fullhand": {
+    "per_call_us": {
+      "p50": 834.7,
+      "p95": 912.8,
+      "p99": 975.1,
+      "max": 1057.7,
+      "mean": 797.7
+    },
+    "n_calls": 500
+  }
+}
